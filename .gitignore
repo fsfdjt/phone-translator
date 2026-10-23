@@ -1,0 +1,33 @@
+# Android / Gradle
+app/build/
+build/
+.gradle/
+local.properties
+*.apk
+*.aab
+*.keystore
+*.jks
+.idea/
+*.iml
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+
+# Secrets / env
+.env
+.env.*
+!.env.example
+gateway/.env
+gateway/*.token
+*.token
+credentials.properties
+
+# Toolchain / local
+.toolchain/
+.vscode/

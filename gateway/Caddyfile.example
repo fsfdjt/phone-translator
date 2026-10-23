@@ -1,0 +1,8 @@
+# Replace the domain and use a real publicly resolvable DNS record.
+# Caddy obtains TLS certificates and proxies WebSocket upgrades automatically.
+your-gateway.example.com {
+    request_body {
+        max_size 8MB
+    }
+    reverse_proxy 127.0.0.1:8765
+}

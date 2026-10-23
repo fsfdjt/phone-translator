@@ -1,0 +1,19 @@
+[Unit]
+Description=Telephone translation gateway
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=translator
+WorkingDirectory=/opt/telephone-translator
+EnvironmentFile=/etc/telephone-translator.env
+ExecStart=/opt/telephone-translator/.venv/bin/python -m uvicorn gateway.server:app --host 127.0.0.1 --port 8765 --workers 1 --ws-max-size 65536 --no-access-log
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=45
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

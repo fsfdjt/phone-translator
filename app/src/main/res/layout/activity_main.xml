@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:fillViewport="true" android:background="#F5F7F7">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="20dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="电话翻译" android:textSize="24sp" android:textStyle="bold"
+            android:textColor="#18262A" android:layout_marginBottom="14dp" />
+        <TextView android:id="@+id/status" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="尚未拨号"
+            android:textColor="#32555E" android:textSize="15sp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="对方接普通电话，只播放英语译文。需要配置电话网关；通话按供应商资费计费。"
+            android:textColor="#32555E" android:layout_marginTop="10dp" />
+        <EditText android:id="@+id/phoneNumber" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:inputType="phone" android:singleLine="true"
+            android:maxLength="24" android:hint="国际号码：孟加拉国 +880… / 马来西亚 +60…" />
+        <Button android:id="@+id/listenButton" android:layout_width="match_parent"
+            android:layout_height="48dp" android:text="通过网关拨号"
+            android:layout_marginTop="12dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="我说的话（中文）" android:textSize="16sp" android:textStyle="bold"
+            android:textColor="#18262A" android:layout_marginTop="24dp" />
+        <EditText android:id="@+id/input" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:minHeight="96dp"
+            android:gravity="top" android:inputType="textMultiLine|textCapSentences"
+            android:hint="输入要说的话" android:maxLength="5000" android:backgroundTint="#087D73" />
+        <Button android:id="@+id/sendButton" android:layout_width="match_parent"
+            android:layout_height="48dp" android:text="翻译并发送英语到对方电话"
+            android:layout_marginTop="8dp" />
+        <Button android:id="@+id/voiceButton" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:minHeight="48dp"
+            android:text="开启中文语音输入（自动发送）" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="我方最近输入的中文（失败时可重新填入）" android:textColor="#32555E" />
+        <TextView android:id="@+id/localTranscript" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:textSize="16sp" android:textIsSelectable="true" />
+        <Button android:id="@+id/recoverTextButton" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="把最近一句重新填入输入框" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="对方说的话（中文译文）" android:textSize="16sp"
+            android:textStyle="bold" android:textColor="#18262A"
+            android:layout_marginTop="24dp" />
+        <TextView android:id="@+id/transcript" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:minHeight="100dp"
+            android:textColor="#18262A" android:textSize="18sp"
+            android:paddingTop="12dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="提前准备的话术" android:textSize="18sp" android:textStyle="bold"
+            android:textColor="#18262A" android:layout_marginTop="20dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="每行一条，保存后点选即可填入中文输入框。也可以复制后粘贴。"
+            android:textColor="#32555E" android:layout_marginTop="6dp" />
+        <LinearLayout android:id="@+id/preparedPhraseList" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="vertical"
+            android:layout_marginTop="8dp" />
+        <EditText android:id="@+id/preparedScripts" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:minHeight="100dp" android:maxHeight="200dp"
+            android:gravity="top" android:inputType="textMultiLine" android:maxLength="20000"
+            android:saveEnabled="false" android:hint="把提前准备好的中文粘贴在这里，每行一条" />
+        <Button android:id="@+id/saveScriptsButton" android:layout_width="match_parent"
+            android:layout_height="48dp" android:text="保存话术" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="提前录制的英文音频" android:textSize="18sp" android:textStyle="bold"
+            android:textColor="#18262A" android:layout_marginTop="24dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="录制或用系统文件选择器导入（Google Drive/网盘/下载的音频均可），通话时点条目即可播放给对方，不会播放你的原声。" android:textColor="#32555E" android:layout_marginTop="6dp" />
+        <Button android:id="@+id/recordAudioButton" android:layout_width="match_parent"
+            android:layout_height="48dp" android:text="录制英文音频" android:layout_marginTop="8dp" />
+        <Button android:id="@+id/importAudioButton" android:layout_width="match_parent"
+            android:layout_height="48dp" android:text="导入音频文件（Google Drive/网盘/本地）" android:layout_marginTop="8dp" />
+        <LinearLayout android:id="@+id/prerecordedList" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="8dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="阿里云服务配置 · 北京百炼" android:textSize="16sp" android:textStyle="bold"
+            android:textColor="#18262A" android:layout_marginTop="24dp" />
+        <EditText android:id="@+id/bailianWorkspaceId" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:singleLine="true"
+            android:inputType="textNoSuggestions" android:hint="百炼业务空间 ID（北京）" />
+        <EditText android:id="@+id/bailianApiKey" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:singleLine="true"
+            android:inputType="textPassword" android:importantForAutofill="no" android:saveEnabled="false" android:hint="百炼 API Key（北京）" />
+        <EditText android:id="@+id/mtAccessKeyId" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:singleLine="true"
+            android:inputType="textNoSuggestions" android:hint="机器翻译 AccessKey ID" />
+        <EditText android:id="@+id/mtAccessKeySecret" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:singleLine="true"
+            android:inputType="textPassword" android:importantForAutofill="no" android:saveEnabled="false" android:hint="机器翻译 AccessKey Secret" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="电话网关配置" android:textSize="16sp" android:textStyle="bold"
+            android:textColor="#18262A" android:layout_marginTop="20dp" />
+        <EditText android:id="@+id/gatewayUrl" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:singleLine="true" android:inputType="textUri"
+            android:hint="网关 HTTPS 地址 / 本地 http://127.0.0.1:8765" />
+        <EditText android:id="@+id/gatewayToken" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:singleLine="true" android:inputType="textPassword"
+            android:importantForAutofill="no" android:saveEnabled="false"
+            android:hint="网关访问令牌（至少 32 位）" />
+        <Button android:id="@+id/saveButton" android:layout_width="match_parent"
+            android:layout_height="48dp" android:text="保存配置"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+</ScrollView>
